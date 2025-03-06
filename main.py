@@ -12,3 +12,6 @@ class CSV:
             pd.read_csv(cls.CSV_FILE)
         except FileNotFoundError:
             df = pd.DataFrame(columns=["date","amount","category","description"])
+            df.to_csv(cls.CSV_FILE, index=False)
+
+CSV.initialize_csv()
